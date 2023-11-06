@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            display: inline-block;
+            padding: 20px;
+            line-height: 40px;
+            text-decoration: none;
+            color: black;
+            font-size: 30px;
+            font-weight: bold;
+            border: solid 1px;
+            position: relative;
+            margin: 200px;
+            /* overflow: hidden; */
+        }
+
+        a::before {
+            content: attr(data-text);
+            position: absolute;
+            transform: translateX(-120%);
+            transition: .3s;
+        }
+
+        a:hover::before {
+            transform: translateX(0);
+        }
+
+        a span {
+            display: block;
+            transition: .3s;
+        }
+
+        a:hover span {
+
+            transform: translateX(150%);
+        }
+
+        /* Count */
+        @property --num {
+            syntax: "<integer>";
+            initial-value: 0;
+            inherits: false;
+        }
+
+        /* 
+        div {
+            animation: counter 5s infinite alternate ease-in-out;
+            counter-reset: num var(--num);
+            font-weight: 800 ;
+            font-size: 40px;
+            padding: 2rem;
+        }
+
+        div::after {
+            content: counter(num);
+        }
+
+        @keyframes counter {
+            from {
+                --num: 0;
+            }
+
+            to {
+                --num: 100;
+            }
+        } */
+
+        .test {
+            background-color: yellow;
+            position: relative;
+        }
+        .test h2 {
+            position: absolute;
+            bottom: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="" data-text="Ahmed Anwar">
+        <span>Ahmed Anwar</span>
+    </a>
+    <div></div>
+    <div class="test">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio tenetur, voluptatem modi nam velit debitis similique laboriosam? Voluptatum error explicabo aspernatur, beatae sed facilis odio et doloremque aliquam ea optio.
+        <h2>Ahmed Anwar</h2>
+    </div>
+
+</body>
+
+</html>
